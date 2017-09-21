@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
+<script src="js/jquery-1.11.0.js"></script>
+<script src="js/jstScroll.js"></script>
+<script>
+
+    var _datas = [], count = 20;
+
+    for (var i = 1; i <= count; i++) {
+        _datas.push({
+            id: i.toString(),
+            name: i.toString()
+        });
+    }
+
+    $.fn.jstScroll.format = function (data) {
+        return "<div style='font-size:15px;font-weight:bold;'>" + data.name + "</div>";
+    }
+
+    $("#container").jstScroll({
+        datas: _datas,
+        itemSize: 30,
+        showCount: 10,
+        width:400
+    });
+
+</script>
